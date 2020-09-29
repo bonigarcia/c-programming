@@ -6,7 +6,7 @@ int main() {
     printf("Enter a string: ");
     scanf("%s", str);
 
-    printf("You entered: %s", str);
+    printf("You entered: %s\n", str);
 
     return 0;
 }
