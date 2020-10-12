@@ -11,7 +11,9 @@ int main() {
     }
 
     comparison = strcmp(str1, str3);
-    if (!comparison) {
+    // strcmp returns 0 when both string are equal
+    // 0 is evaluated as false in a conditional
+    if (comparison == 0) {    //if (!comparison) {
         printf("\"%s\" and \"%s\" are IDENTICAL (comparison=%d)\n", str1, str3,
                 comparison);
     }
