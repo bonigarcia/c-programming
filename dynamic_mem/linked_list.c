@@ -15,7 +15,7 @@ void push(Node **head_ref, int new_data) {
 
 void insertAfter(Node *prev_node, int new_data) {
     if (prev_node == NULL) {
-        printf("the given previous node cannot be NULL");
+        printf("The previous node cannot be NULL\n");
         return;
     }
 
