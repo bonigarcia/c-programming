@@ -7,8 +7,7 @@ int main() {
     for (;;) { // Infinite loop
         printf("Insert character (q to exit): ");
         scanf("%c", &ch);
-        while (getchar() != '\n')
-            ; // Clear input buffer
+        while (getchar() != '\n'); // Clear input buffer
 
         if (tolower(ch) == 'q') {
             printf("Goodbye!\n");
