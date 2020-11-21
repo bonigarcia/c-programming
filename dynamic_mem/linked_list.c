@@ -48,6 +48,20 @@ void printList(Node *node) {
         printf(" %d", node->data);
         node = node->next;
     }
+    printf("\n");
+}
+
+void deleteList(struct Node **head_ref) {
+    struct Node *current = *head_ref;
+    struct Node *next;
+
+    while (current != NULL) {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+
+    *head_ref = NULL;
 }
 
 int main() {
@@ -69,6 +83,11 @@ int main() {
     insertAfter(head->next, 8);
 
     printf("Linked list is:");
+    printList(head);
+
+    // Delete list
+    deleteList(&head);
+    printf("Linked list now is:");
     printList(head);
 
     return 0;
