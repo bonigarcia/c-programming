@@ -1,8 +1,8 @@
 // Compile with debug info:
-// gcc -g -o valgrind_unitialized valgrind_unitialized.c 
+// gcc -g -o valgrind_unitialized valgrind_unitialized.c
 
 // Test with valgrind:
-// valgrind --leak-check=full --track-origins=yes -v ./valgrind_unitialized
+// valgrind --track-origins=yes ./valgrind_unitialized
 
 #include <stdlib.h>
 #include <stdio.h>

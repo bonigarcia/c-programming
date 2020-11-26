@@ -2,7 +2,7 @@
 // gcc -g -o valgrind_memory_leak valgrind_memory_leak.c
 
 // Test with valgrind:
-// valgrind --leak-check=full --track-origins=yes -v ./valgrind_memory_leak
+// valgrind --leak-check=full ./valgrind_memory_leak
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -19,4 +19,3 @@ int main() {
 
     return 0;
 }
-
