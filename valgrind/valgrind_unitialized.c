@@ -8,7 +8,7 @@
 #include <stdio.h>
 
 int main() {
-    int number; // Should be initialized (e.g. to zero)
+    int number;
     if (number == 0) {
         printf("number is zero");
     }
