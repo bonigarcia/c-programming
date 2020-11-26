@@ -7,8 +7,8 @@
 #include <stdlib.h>
 
 int main() {
-   int *ptr = 0;
-   *ptr = 33;
+    int *ptr = 0;
+    *ptr = 33;
 
-   return 0;
+    return 0;
 }

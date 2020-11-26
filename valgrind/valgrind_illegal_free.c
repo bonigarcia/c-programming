@@ -8,10 +8,10 @@
 #include <stdio.h>
 
 int main() {
-   void *ptr = malloc(4);
-   free(ptr);
-   ptr++; // To mismatch
-   free(ptr);
+    void *ptr = malloc(4);
+    free(ptr);
+    ptr++; // To mismatch
+    free(ptr);
 
-   return 0;
+    return 0;
 }

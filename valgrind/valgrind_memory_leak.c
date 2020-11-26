@@ -9,17 +9,14 @@
 #include <string.h>
 
 void leak() {
-   void *ptr=malloc(100);
+    void *ptr = malloc(100);
 }
 
 int main() {
-   printf("#Let's leak 100 bytes");
-   leak();
-   printf("#100 bytes leaked");
+    printf("#Let's leak 100 bytes");
+    leak();
+    printf("#100 bytes leaked");
 
-   return 0;
+    return 0;
 }
-
-
-
 

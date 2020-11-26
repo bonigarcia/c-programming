@@ -8,10 +8,10 @@
 #include <stdio.h>
 
 int main() {
-   int number; // Should be initialized (e.g. to zero)
-   if (number == 0) {
-      printf("number is zero");
-   }
+    int number; // Should be initialized (e.g. to zero)
+    if (number == 0) {
+        printf("number is zero");
+    }
 
-   return 0;
+    return 0;
 }

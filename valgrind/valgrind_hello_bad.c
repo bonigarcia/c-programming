@@ -9,7 +9,7 @@
 #include <stdlib.h>
 
 int main() {
-  void* ptr = malloc(1);
+    void *ptr = malloc(1);
 
-  return 0;
+    return 0;
 }

@@ -3,7 +3,7 @@
 void assign_and_print(int *dst, int src) {
     printf("Pointer address is %p\n", dst);
     *dst = src;
-    printf("Value is %d\n",*dst);
+    printf("Value is %d\n", *dst);
 }
 
 int main(int argc, char *argv[]) {

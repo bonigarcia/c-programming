@@ -7,8 +7,8 @@
 #include <stdlib.h>
 
 int main() {
-   void* ptr = malloc(1);
-   free(ptr);
+    void *ptr = malloc(1);
+    free(ptr);
 
-   return 0;
+    return 0;
 }
