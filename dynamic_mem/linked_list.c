@@ -73,7 +73,7 @@ void print_list(Node *head) {
 /*
  * Delete list (free memory).
  */
-void clean_list(Node **head_ref) {
+void clear_list(Node **head_ref) {
     Node *current = *head_ref;
     Node *next;
 
@@ -148,12 +148,12 @@ int main() {
     print_list(head_copy);
 
     // Delete original list
-    clean_list(&head);
+    clear_list(&head);
     printf("Original linked list after deleting:");
     print_list(head);
 
     // Delete copied list
-    clean_list(&head_copy);
+    clear_list(&head_copy);
     printf("Copy of linked list after deleting:");
     print_list(head_copy);
 
