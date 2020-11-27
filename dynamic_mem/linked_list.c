@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
  * Node definition
@@ -95,7 +96,9 @@ Node* clone_list(Node *head) {
     Node *tail = NULL;
 
     while (current != NULL) {
-        Node *new_node = create_node(current->data);
+        Node *new_node = (Node*) malloc(sizeof(Node));
+        memcpy(new_node, current, sizeof(Node));
+
         if (new_list == NULL) {
             push(&new_list, new_node);
             tail = new_list;
