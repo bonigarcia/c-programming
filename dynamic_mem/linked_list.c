@@ -64,6 +64,25 @@ void deleteList(struct Node **head_ref) {
     *head_ref = NULL;
 }
 
+struct Node* copy_list(struct Node *head) {
+    struct Node *current = head;
+    struct Node *new_list = NULL;
+    struct Node *tail = NULL;
+
+    while (current != NULL) {
+        if (new_list == NULL) {
+            push(&new_list, current->data);
+            tail = new_list;
+        } else {
+            push(&(tail->next), current->data);
+            tail = tail->next;
+        }
+        current = current->next;
+    }
+
+    return new_list;
+}
+
 int main() {
     Node *head = NULL;
 
@@ -85,7 +104,16 @@ int main() {
     printf("Linked list is:");
     printList(head);
 
-    // Delete list
+    // Clone list
+    Node *list_copy = copy_list(head);
+    printf("Copy of linked:");
+    printList(list_copy);
+
+    deleteList(&list_copy);
+    printf("Copy of linked list after deleting:");
+    printList(list_copy);
+
+    // Delete original list
     deleteList(&head);
     printf("Linked list now is:");
     printList(head);
