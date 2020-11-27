@@ -87,9 +87,9 @@ void clear_list(Node **head_ref) {
 }
 
 /*
- * Clone list.
+ * Make a copy of a list.
  */
-Node* copy_list(Node *head) {
+Node* clone_list(Node *head) {
     Node *current = head;
     Node *new_list = NULL;
     Node *tail = NULL;
@@ -142,8 +142,8 @@ int main() {
     printf("Insert 8 after second node. Linked list is:");
     print_list(head);
 
-    // Clone list
-    Node *head_copy = copy_list(head);
+    // Copy list
+    Node *head_copy = clone_list(head);
     printf("Copy of linked list:");
     print_list(head_copy);
 
