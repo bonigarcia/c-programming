@@ -13,7 +13,7 @@ typedef struct Node {
  * Insert Node at the beginning
  */
 void push(Node **head_ref, int new_data) {
-    Node *new_node = (Node*) malloc(sizeof(struct Node));
+    Node *new_node = (Node*) malloc(sizeof(Node));
     new_node->data = new_data;
     new_node->next = *head_ref;
     *head_ref = new_node;
@@ -22,7 +22,7 @@ void push(Node **head_ref, int new_data) {
 /*
  * Insert Node at the end
  */
-void append(struct Node **head_ref, int new_data) {
+void append(Node **head_ref, int new_data) {
     Node *new_node = (Node*) malloc(sizeof(Node));
     Node *last = *head_ref;
     new_node->data = new_data;
@@ -69,9 +69,9 @@ void print_list(Node *node) {
 /*
  * Delete list (free memory).
  */
-void clean_list(struct Node **head_ref) {
-    struct Node *current = *head_ref;
-    struct Node *next;
+void clean_list(Node **head_ref) {
+    Node *current = *head_ref;
+    Node *next;
 
     while (current != NULL) {
         next = current->next;
@@ -85,10 +85,10 @@ void clean_list(struct Node **head_ref) {
 /*
  * Clone list.
  */
-struct Node* copy_list(struct Node *head) {
-    struct Node *current = head;
-    struct Node *new_list = NULL;
-    struct Node *tail = NULL;
+Node* copy_list(Node *head) {
+    Node *current = head;
+    Node *new_list = NULL;
+    Node *tail = NULL;
 
     while (current != NULL) {
         if (new_list == NULL) {
