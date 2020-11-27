@@ -10,11 +10,20 @@ typedef struct Node {
 } Node;
 
 /*
+ * Create new node (using data as input)
+ */
+Node* create_node(int data) {
+    Node *node = (Node*) malloc(sizeof(Node));
+    node->data = data;
+    node->next = NULL;
+
+    return node;
+}
+
+/*
  * Insert Node at the beginning
  */
-void push(Node **head_ref, int new_data) {
-    Node *new_node = (Node*) malloc(sizeof(Node));
-    new_node->data = new_data;
+void push(Node **head_ref, Node *new_node) {
     new_node->next = *head_ref;
     *head_ref = new_node;
 }
@@ -22,11 +31,8 @@ void push(Node **head_ref, int new_data) {
 /*
  * Insert Node at the end
  */
-void append(Node **head_ref, int new_data) {
-    Node *new_node = (Node*) malloc(sizeof(Node));
+void append(Node **head_ref, Node *new_node) {
     Node *last = *head_ref;
-    new_node->data = new_data;
-    new_node->next = NULL;
 
     if (*head_ref == NULL) {
         *head_ref = new_node;
@@ -43,14 +49,12 @@ void append(Node **head_ref, int new_data) {
 /*
  * Insert Node after a giving position
  */
-void insert_after(Node *prev_node, int new_data) {
+void insert_after(Node *prev_node, Node *new_node) {
     if (prev_node == NULL) {
         printf("The previous node cannot be NULL\n");
         return;
     }
 
-    Node *new_node = (Node*) malloc(sizeof(Node));
-    new_node->data = new_data;
     new_node->next = prev_node->next;
     prev_node->next = new_node;
 }
@@ -58,10 +62,10 @@ void insert_after(Node *prev_node, int new_data) {
 /*
  * Print list content on the standard output.
  */
-void print_list(Node *node) {
-    while (node != NULL) {
-        printf(" %d", node->data);
-        node = node->next;
+void print_list(Node *head) {
+    while (head != NULL) {
+        printf(" %d", head->data);
+        head = head->next;
     }
     printf("\n");
 }
@@ -91,11 +95,12 @@ Node* copy_list(Node *head) {
     Node *tail = NULL;
 
     while (current != NULL) {
+        Node *new_node = create_node(current->data);
         if (new_list == NULL) {
-            push(&new_list, current->data);
+            push(&new_list, new_node);
             tail = new_list;
         } else {
-            push(&(tail->next), current->data);
+            push(&(tail->next), new_node);
             tail = tail->next;
         }
         current = current->next;
@@ -107,37 +112,50 @@ Node* copy_list(Node *head) {
 int main() {
     Node *head = NULL;
 
-    // Insert 6 at the beginning. Linked list becomes: 6->NULL
-    push(&head, 6);
-
-    // Insert 7 at the beginning. Linked list becomes: 7->6->NULL
-    push(&head, 7);
-
-    // Insert 1 at the beginning. Linked list becomes: 1->7->6->NULL
-    push(&head, 1);
-
-    // Insert 4 at the end. Linked list becomes: 1->7->6->4->NULL
-    append(&head, 4);
-
-    // Insert 8 after second node. Linked list becomes: 1->7->8->6->4->NULL
-    insert_after(head->next, 8);
-
-    printf("Linked list is:");
+    // Push 6
+    Node *node_6 = create_node(6);
+    push(&head, node_6);
+    printf("Insert 6 at the beginning. Linked list is:");
     print_list(head);
 
-    // Copy original list to another (clone)
-    Node *list_copy = copy_list(head);
-    printf("Copy of linked:");
-    print_list(list_copy);
+    // Push 7
+    Node *node_7 = create_node(7);
+    push(&head, node_7);
+    printf("Insert 7 at the beginning. Linked list is:");
+    print_list(head);
 
-    clean_list(&list_copy);
-    printf("Copy of linked list after deleting:");
-    print_list(list_copy);
+    // Push 1
+    Node *node_1 = create_node(1);
+    push(&head, node_1);
+    printf("Insert 1 at the beginning. Linked list is:");
+    print_list(head);
+
+    // Append 4
+    Node *node_4 = create_node(4);
+    append(&head, node_4);
+    printf("Insert 4 at the end. Linked list is:");
+    print_list(head);
+
+    // Insert 8
+    Node *node_8 = create_node(8);
+    insert_after(head->next, node_8);
+    printf("Insert 8 after second node. Linked list is:");
+    print_list(head);
+
+    // Clone list
+    Node *head_copy = copy_list(head);
+    printf("Copy of linked list:");
+    print_list(head_copy);
 
     // Delete original list
     clean_list(&head);
     printf("Original linked list after deleting:");
     print_list(head);
+
+    // Delete copied list
+    clean_list(&head_copy);
+    printf("Copy of linked list after deleting:");
+    print_list(head_copy);
 
     return 0;
 }
