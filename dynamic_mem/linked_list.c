@@ -1,11 +1,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*
+ * Node definition
+ */
 typedef struct Node {
     int data;
     struct Node *next;
 } Node;
 
+/*
+ * Insert Node at the beginning
+ */
 void push(Node **head_ref, int new_data) {
     Node *new_node = (Node*) malloc(sizeof(struct Node));
     new_node->data = new_data;
@@ -13,18 +19,9 @@ void push(Node **head_ref, int new_data) {
     *head_ref = new_node;
 }
 
-void insert_after(Node *prev_node, int new_data) {
-    if (prev_node == NULL) {
-        printf("The previous node cannot be NULL\n");
-        return;
-    }
-
-    Node *new_node = (Node*) malloc(sizeof(Node));
-    new_node->data = new_data;
-    new_node->next = prev_node->next;
-    prev_node->next = new_node;
-}
-
+/*
+ * Insert Node at the end
+ */
 void append(struct Node **head_ref, int new_data) {
     Node *new_node = (Node*) malloc(sizeof(Node));
     Node *last = *head_ref;
@@ -43,6 +40,24 @@ void append(struct Node **head_ref, int new_data) {
     return;
 }
 
+/*
+ * Insert Node after a giving position
+ */
+void insert_after(Node *prev_node, int new_data) {
+    if (prev_node == NULL) {
+        printf("The previous node cannot be NULL\n");
+        return;
+    }
+
+    Node *new_node = (Node*) malloc(sizeof(Node));
+    new_node->data = new_data;
+    new_node->next = prev_node->next;
+    prev_node->next = new_node;
+}
+
+/*
+ * Print list content on the standard output.
+ */
 void print_list(Node *node) {
     while (node != NULL) {
         printf(" %d", node->data);
@@ -51,6 +66,9 @@ void print_list(Node *node) {
     printf("\n");
 }
 
+/*
+ * Delete list (free memory).
+ */
 void clean_list(struct Node **head_ref) {
     struct Node *current = *head_ref;
     struct Node *next;
@@ -64,6 +82,9 @@ void clean_list(struct Node **head_ref) {
     *head_ref = NULL;
 }
 
+/*
+ * Clone list.
+ */
 struct Node* copy_list(struct Node *head) {
     struct Node *current = head;
     struct Node *new_list = NULL;
@@ -104,7 +125,7 @@ int main() {
     printf("Linked list is:");
     print_list(head);
 
-    // Clone list
+    // Copy original list to another (clone)
     Node *list_copy = copy_list(head);
     printf("Copy of linked:");
     print_list(list_copy);
