@@ -2,9 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAX_STR 255
-#define SIZE 10
-
 int main(int argc, char *argv[]) {
     FILE *fp = fopen("file3.bin", "wb");
     if (!fp) {
