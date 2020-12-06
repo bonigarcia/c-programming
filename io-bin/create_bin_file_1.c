@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    fwrite(content, MAX_STR + 1, SIZE, fp);
+    fwrite(content, MAX_STR, SIZE, fp);
 
     fclose(fp);
 
