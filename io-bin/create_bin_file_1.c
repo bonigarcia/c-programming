@@ -17,9 +17,7 @@ int main(int argc, char *argv[]) {
         perror("An error occurred opening the file\n");
         return 1;
     }
-
     fwrite(content, MAX_STR, SIZE, fp);
-
     fclose(fp);
 
     return 0;
