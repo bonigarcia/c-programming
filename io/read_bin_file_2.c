@@ -3,24 +3,23 @@
 #include <stdlib.h>
 
 #define MAX_STR 255
-#define SIZE 10
 
 struct data {
     char str[MAX_STR];
+    int integer;
 };
 
 int main(int argc, char *argv[]) {
-    FILE *fp = fopen("file1.bin", "rb");
+    FILE *fp = fopen("file2.bin", "rb");
     if (!fp) {
         perror("An error occurred opening the file\n");
         return 1;
     }
 
-    printf("The content of the binary file (showing only odd values) is:\n");
+    printf("The content of the binary file is:\n");
     struct data record;
     while (fread(&record, sizeof(struct data), 1, fp) != 0) {
-        puts(record.str);
-        fseek(fp, sizeof(struct data), SEEK_CUR);
+        printf("String: %s -- Integer: %d\n", record.str, record.integer);
     }
 
     fclose(fp);

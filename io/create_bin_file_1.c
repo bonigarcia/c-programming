@@ -5,15 +5,11 @@
 #define MAX_STR 255
 #define SIZE 10
 
-struct data {
-    char str[MAX_STR];
-};
-
 int main(int argc, char *argv[]) {
-    struct data *content = (struct data*) calloc(SIZE, sizeof(struct data));
+    char content[10][MAX_STR];
 
     for (int i = 0; i < SIZE; i++) {
-        sprintf(content[i].str, "This is line %d", i + 1);
+        sprintf(content[i], "This is line %d", i + 1);
     }
 
     FILE *fp = fopen("file1.bin", "wb");
@@ -22,11 +18,9 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
-    fwrite(content, sizeof(struct data), SIZE, fp);
+    fwrite(content, MAX_STR + 1, SIZE, fp);
 
     fclose(fp);
-
-    free(content);
 
     return 0;
 }

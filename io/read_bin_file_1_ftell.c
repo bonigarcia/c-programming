@@ -3,11 +3,6 @@
 #include <stdlib.h>
 
 #define MAX_STR 255
-#define SIZE 10
-
-struct data {
-    char str[MAX_STR];
-};
 
 int main(int argc, char *argv[]) {
     FILE *fp = fopen("file1.bin", "rb");
@@ -17,10 +12,14 @@ int main(int argc, char *argv[]) {
     }
 
     printf("The content of the binary file is:\n");
-    struct data record;
-    while (fread(&record, sizeof(struct data), 1, fp) != 0) {
-        puts(record.str);
+    char record[MAX_STR];
+    int offset_pos = ftell(fp);
+    printf("[offset at the beginning is: %d]\n", offset_pos);
+    while (fread(&record, sizeof(record), 1, fp) != 0) {
+        offset_pos = ftell(fp);
+        printf("%s [offset is now: %d]\n", record, offset_pos);
     }
+    printf("[offset at the end is: %d]\n", offset_pos);
 
     fclose(fp);
 
