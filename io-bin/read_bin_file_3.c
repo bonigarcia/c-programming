@@ -1,7 +1,7 @@
 #include <string.h>
 #include <stdio.h>
 
-int main(int argc, char *argv[]) {
+int main() {
     FILE *fp = fopen("file3.bin", "rb");
     if (!fp) {
         perror("An error occurred opening the file\n");

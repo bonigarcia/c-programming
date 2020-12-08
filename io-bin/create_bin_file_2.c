@@ -9,7 +9,7 @@ struct data {
     int integer;
 };
 
-int main(int argc, char *argv[]) {
+int main() {
     struct data *content = (struct data*) calloc(SIZE, sizeof(struct data));
 
     for (int i = 0; i < SIZE; i++) {

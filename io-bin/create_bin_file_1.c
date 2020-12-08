@@ -4,7 +4,7 @@
 #define MAX_STR 255
 #define SIZE 10
 
-int main(int argc, char *argv[]) {
+int main() {
     char content[10][MAX_STR];
 
     for (int i = 0; i < SIZE; i++) {

@@ -3,7 +3,7 @@
 
 #define MAX_STR 255
 
-int main(int argc, char *argv[]) {
+int main() {
     FILE *fp = fopen("file1.bin", "rb");
     if (!fp) {
         perror("An error occurred opening the file\n");
