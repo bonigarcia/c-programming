@@ -4,7 +4,7 @@
 #define MAX_STR 255
 
 int main() {
-    FILE *fp = fopen("file1.bin", "rb");
+    FILE *fp = fopen("file2.bin", "rb");
     if (!fp) {
         perror("An error occurred opening the file\n");
         return 1;

@@ -1,20 +1,31 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+#define MAX_STR 255
+#define SIZE 10
+
+struct data {
+    char str[MAX_STR];
+    int integer;
+};
 
 int main() {
+    struct data *content = (struct data*) calloc(SIZE, sizeof(struct data));
+
+    for (int i = 0; i < SIZE; i++) {
+        sprintf(content[i].str, "This is line %d", i + 1);
+        content[i].integer = i + i;
+    }
+
     FILE *fp = fopen("file3.bin", "wb");
     if (!fp) {
         perror("An error occurred opening the file\n");
         return 1;
     }
-
-    int i = 100;
-    float f = 20.5;
-
-    fwrite(&i, sizeof(i), 1, fp);
-    fwrite(&f, sizeof(f), 1, fp);
-
+    fwrite(content, sizeof(struct data), SIZE, fp);
     fclose(fp);
+
+    free(content);
 
     return 0;
 }
-
