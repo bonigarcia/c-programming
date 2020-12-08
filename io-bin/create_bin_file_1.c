@@ -10,8 +10,8 @@ int main() {
     int i = 100;
     float f = 20.5;
 
-    fwrite(&i, sizeof(i), 1, fp);
-    fwrite(&f, sizeof(f), 1, fp);
+    fwrite(&i, sizeof(int), 1, fp);
+    fwrite(&f, sizeof(float), 1, fp);
 
     fclose(fp);
 
