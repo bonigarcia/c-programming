@@ -12,7 +12,7 @@ int main() {
 
     printf("The content of the binary file (showing only odd values) is:\n");
     char record[MAX_STR];
-    while (fread(&record, sizeof(record), 1, fp) != 0) {
+    while (fread(&record, sizeof(record), 1, fp) == 1) {
         puts(record);
         fseek(fp, sizeof(record), SEEK_CUR);
     }

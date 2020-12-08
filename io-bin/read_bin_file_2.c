@@ -12,7 +12,7 @@ int main() {
 
     printf("The content of the binary file is:\n");
     char record[MAX_STR];
-    while (fread(&record, sizeof(record), 1, fp) != 0) {
+    while (fread(&record, sizeof(record), 1, fp) == 1) {
         puts(record);
     }
 

@@ -14,7 +14,7 @@ int main() {
     char record[MAX_STR];
     int offset_pos = ftell(fp);
     printf("[offset at the beginning is: %d]\n", offset_pos);
-    while (fread(&record, sizeof(record), 1, fp) != 0) {
+    while (fread(&record, sizeof(record), 1, fp) == 1) {
         offset_pos = ftell(fp);
         printf("%s [offset is now: %d]\n", record, offset_pos);
     }

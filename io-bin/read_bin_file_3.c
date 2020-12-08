@@ -17,7 +17,7 @@ int main() {
 
     printf("The content of the binary file is:\n");
     struct data record;
-    while (fread(&record, sizeof(struct data), 1, fp) != 0) {
+    while (fread(&record, sizeof(struct data), 1, fp) == 1) {
         printf("String: %s -- Integer: %d\n", record.str, record.integer);
     }
 
