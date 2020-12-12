@@ -3,8 +3,10 @@
 #include <pthread.h>
 #include <unistd.h>
 
-void* thread_run(void *data) { //sleep(2);
+void* thread_run(void *data) {
+    //sleep(2);
     printf("[TH_1 %ld]: Hello from the thread \n", pthread_self());
+
     sleep(1);
     (*(int*) data)++;
     printf("[TH_1 %ld]: To exit...............\n", pthread_self());
@@ -27,7 +29,8 @@ int main() {
 
     int *ptr_output_data;
     pthread_join(thread, (void**) &ptr_output_data);
-    printf("[MAIN %ld]: Thread returns %d \n", pthread_self(), *ptr_output_data);
+    printf("[MAIN %ld]: Thread returns %d \n", pthread_self(),
+            *ptr_output_data);
 
     return 0;
 }

@@ -17,8 +17,8 @@ int main() {
     pthread_t thread;
     int data = 0;
     int thread_rc;
-    printf("[MAIN: %ld]: Starting............ \n", pthread_self());
 
+    printf("[MAIN: %ld]: Starting............ \n", pthread_self());
     if ((thread_rc = pthread_create(&thread, NULL, thread_run, &data)) != 0) {
         printf("Error creating the thread. Code %i", thread_rc);
         return -1;
