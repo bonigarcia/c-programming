@@ -40,8 +40,9 @@ void append(Node **head_ref, Node *new_node) {
         return;
     }
 
-    while (last->next != NULL)
+    while (last->next != NULL) {
         last = last->next;
+    }
 
     last->next = new_node;
     return;

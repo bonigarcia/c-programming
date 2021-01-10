@@ -5,7 +5,7 @@
 #define SIZE 10
 
 int main() {
-    char content[10][MAX_STR];
+    char content[SIZE][MAX_STR];
 
     for (int i = 0; i < SIZE; i++) {
         sprintf(content[i], "This is line %d", i + 1);
