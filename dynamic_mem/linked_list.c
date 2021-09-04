@@ -123,6 +123,32 @@ void swap(Node *a, Node *b) {
     b->data = tmp.data;
 }
 
+/*
+ * Delete node by value.
+ */
+void delete_node(Node **head_ref, int key) {
+    struct Node *tmp = *head_ref, *prev;
+
+    if (tmp != NULL && tmp->data == key) {
+        *head_ref = tmp->next;
+        free(tmp);
+        return;
+    }
+
+    while (tmp != NULL && tmp->data != key) {
+        prev = tmp;
+        tmp = tmp->next;
+    }
+
+    if (tmp == NULL) {
+        return;
+    }
+
+    prev->next = tmp->next;
+
+    free(tmp);
+}
+
 int main() {
     Node *head = NULL;
 
@@ -142,6 +168,11 @@ int main() {
     Node *node_1 = create_node(1);
     push(&head, node_1);
     printf("Insert 1 at the beginning. Linked list is:");
+    print_list(head);
+
+    // Delete 7
+    delete_node(&head, 7);
+    printf("Delete node with value 7. Linked list is:");
     print_list(head);
 
     // Append 4
