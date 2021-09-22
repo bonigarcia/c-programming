@@ -14,6 +14,7 @@ int main() {
     printf("%f\n", float_num);
     printf("%g\n", double_num);
     printf("%s\n", string);
+    printf("%p\n", string);
 
     return 0;
 }
