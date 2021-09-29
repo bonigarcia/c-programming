@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 #define SEPARATOR "/"
 
@@ -8,10 +9,8 @@ int main() {
     char *token = strtok(str, SEPARATOR);
 
     while (token != NULL) {
-        printf("%s\n", token);
+        printf("%d\n", atoi(token));
         token = strtok(NULL, SEPARATOR);
     }
-
-    printf("Original string: %s\n", str);
     return 0;
 }

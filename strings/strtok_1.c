@@ -11,7 +11,5 @@ int main() {
         printf("%s\n", token);
         token = strtok(NULL, SEPARATOR);
     }
-
-    printf("Original string: %s\n", str);
     return 0;
 }
