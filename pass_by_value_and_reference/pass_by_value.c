@@ -1,11 +1,11 @@
 #include <stdio.h>
 
-void swap(int *first, int *second) {
+void swap(int first, int second) {
     int tmp;
 
-    tmp = *first;
-    *first = *second;
-    *second = tmp;
+    tmp = first;
+    first = second;
+    second = tmp;
 }
 
 int main(void) {
@@ -16,7 +16,7 @@ int main(void) {
     printf("\t a=%d \n", a);
     printf("\t b=%d \n", b);
 
-    swap(&a, &b);
+    swap(a, b);
 
     puts("After swap:");
     printf("\t a=%d \n", a);
