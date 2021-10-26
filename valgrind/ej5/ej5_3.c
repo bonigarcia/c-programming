@@ -1,14 +1,16 @@
 #include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 void main() {
     int *d;
     float *s;
     char *c;
-    c = (int*) malloc(6 * sizeof(char));
     d = (int*) malloc(sizeof(int));
-    s = (int*) malloc(sizeof(float));
+    s = (float*) malloc(sizeof(float));
+    c = (char*) malloc(6 * sizeof(char));
     *d = 100;
     *s = 34.2;
-    *c = "HELLO";
-    printf("%d\t%f\t%s", *d, *s, c);
+    strcpy(c, "HELLO");
+    printf("%d\t%f\t%s\n", *d, *s, c);
 }
