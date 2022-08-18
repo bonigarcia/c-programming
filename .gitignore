@@ -53,6 +53,7 @@ dkms.conf
 
 # Eclipse
 .project
+.settings
 
 # Binary files
 *.bin
