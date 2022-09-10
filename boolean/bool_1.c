@@ -5,7 +5,13 @@ int main() {
     bool t = true;
     bool f = false;
 
-    printf("True: %d -- False: %d \n", t, f);
+    if (t) {
+        printf("True: %d\n", t);
+    }
+
+    if (!f) {
+        printf("False: %d\n", f);
+    }
 
     return 0;
 }
