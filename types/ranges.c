@@ -3,8 +3,6 @@
 #include <float.h>
 
 int main() {
-    printf("The number of bits in a byte = %d\n\n", CHAR_BIT);
-
     printf("The minimum value of CHAR = %d\n", CHAR_MIN);
     printf("The maximum value of CHAR = %d\n\n", CHAR_MAX);
 
