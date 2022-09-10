@@ -10,7 +10,7 @@ int main() {
     printf("Sum: %d\n", sum);
     printf("Subtraction: %d\n", subtraction);
     printf("Multiplication: %d\n", multiplication);
-    printf("Division: %f\n", division);
+    printf("Division: %.2f\n", division);
     printf("Module: %d\n", module);
     printf("Increment: %d\n", ++sum);
     printf("Decrement: %d\n", --sum);
