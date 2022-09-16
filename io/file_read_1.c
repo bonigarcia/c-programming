@@ -2,16 +2,15 @@
 #include <stdlib.h>
 
 int main() {
-    FILE *fp;
-    int bufSize = 255;
-    char buffer[bufSize];
-
-    if ((fp = fopen("file.txt", "r")) == NULL) {
+    FILE *fp = fopen("file.txt", "r");
+    if (fp == NULL) {
         printf("Error opening file\n");
         exit(1);
     }
 
-    while (fgets(buffer, bufSize, fp) != NULL) {
+    int buf_size = 255;
+    char buffer[buf_size];
+    while (fgets(buffer, buf_size, fp) != NULL) {
         printf("%s", buffer);
     }
 

@@ -1,11 +1,15 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main() {
-    FILE *fp;
+    FILE *fp = fopen("data.txt", "r");
+    if (fp == NULL) {
+        printf("Error opening file\n");
+        exit(1);
+    }
+
     char name[80];
     int age;
-
-    fp = fopen("data.txt", "r");
 
     while (fscanf(fp, "%s is %d years old\n", name, &age) != EOF) {
         printf("Name: %s -- Age: %d\n", name, age);

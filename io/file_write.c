@@ -2,21 +2,22 @@
 #include <stdlib.h>
 
 int main() {
-    int i;
-    FILE *fp;
-
-    fp = fopen("file.txt", "w");
+    FILE *fp = fopen("file.txt", "w");
     if (fp == NULL) {
         printf("Error opening file\n");
         exit(1);
     }
 
+    // Write a line to the file
     fprintf(fp, "Open file for writing\n");
 
+    int i;
     printf("Enter integer: ");
     scanf("%d", &i);
 
+    // Write another line to the file
     fprintf(fp, "You entered: %d\n", i);
+
     fclose(fp);
 
     return 0;

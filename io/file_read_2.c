@@ -2,14 +2,14 @@
 #include <stdlib.h>
 
 int main() {
-    FILE *fp;
-    int ch;
+    FILE *fp = fp = fopen("file.txt", "r");
 
-    if ((fp = fopen("file_2.txt", "r")) == NULL) {
+    if (fp == NULL) {
         printf("Error opening file\n");
         exit(1);
     }
 
+    int ch;
     while ((ch = fgetc(fp)) != EOF) {
         putchar(ch);
     }
