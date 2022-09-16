@@ -3,15 +3,14 @@
 #define MAX_STR 80
 
 struct data_1 {
-   int integer;
-   char str[MAX_STR];
+    int integer;
+    char str[MAX_STR];
 };
 
 union data_2 {
-   int integer;
-   char str[MAX_STR];
+    int integer;
+    char str[MAX_STR];
 };
-
 
 int main() {
     struct data_1 d1;
