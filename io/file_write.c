@@ -7,7 +7,7 @@ int main() {
 
     fp = fopen("file.txt", "w");
     if (fp == NULL) {
-        printf("Error opening file");
+        printf("Error opening file\n");
         exit(1);
     }
 

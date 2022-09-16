@@ -6,7 +6,7 @@ int main() {
     int ch;
 
     if ((fp = fopen("file_2.txt", "r")) == NULL) {
-        printf("Error opening file");
+        printf("Error opening file\n");
         exit(1);
     }
 

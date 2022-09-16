@@ -7,7 +7,7 @@ int main() {
     char buffer[bufSize];
 
     if ((fp = fopen("file.txt", "r")) == NULL) {
-        printf("Error opening file");
+        printf("Error opening file\n");
         exit(1);
     }
 
