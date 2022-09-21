@@ -3,12 +3,11 @@
 
 int main() {
     char ch;
-    char buffer[80];
 
     for (;;) { // Infinite loop
         printf("Insert character (q to exit): ");
-        scanf("%s", buffer);
-        ch = buffer[0];
+        scanf("%c", &ch);
+        while (getchar() != '\n'); // Clear input buffer
 
         if (tolower(ch) == 'q') {
             printf("Goodbye!\n");
