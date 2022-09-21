@@ -9,7 +9,7 @@ int main() {
     }
 
     // Write a line to the file
-    fprintf(fp, "Open file for writing\n");
+    fprintf(fp, "I am writing into the file\n");
 
     int i;
     printf("Enter integer: ");
