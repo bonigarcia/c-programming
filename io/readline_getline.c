@@ -9,7 +9,7 @@ int main() {
     printf("Enter a line: ");
     characters = getline(&b, &bufsize, stdin);
     printf("%d characters were read\n", characters);
-    printf("You entered: %s", buffer);
+    printf("You entered: %s\n", buffer);
 
     return 0;
 }

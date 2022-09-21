@@ -7,7 +7,7 @@ int main() {
     printf("Enter line: ");
     fgets(buffer, bufsize, stdin);
 
-    printf("You entered: %s", buffer);
+    printf("You entered: %s\n", buffer);
 
     return 0;
 }
