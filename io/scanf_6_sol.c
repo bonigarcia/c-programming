@@ -3,11 +3,12 @@
 
 int main() {
     int i;
-    char buffer[80];
+    int bufsize = 80;
+    char buffer[bufsize];
 
     for (;;) { // Infinite loop
         printf("Enter an option from 1 to 7 (8 for exit): ");
-        scanf("%s", buffer);
+        fgets(buffer, bufsize, stdin);
         i = atoi(buffer);
 
         if (i > 0 && i < 8) {

@@ -3,11 +3,12 @@
 
 int main() {
     char ch;
-    char buffer[80];
+    int bufsize = 80;
+    char buffer[bufsize];
 
     for (;;) { // Infinite loop
         printf("Insert character (q to exit): ");
-        scanf("%s", buffer);
+        fgets(buffer, bufsize, stdin);
         ch = buffer[0];
 
         if (tolower(ch) == 'q') {
