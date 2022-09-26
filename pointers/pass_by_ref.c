@@ -16,9 +16,7 @@ int main() {
     printf("\t a=%d \n", a);
     printf("\t b=%d \n", b);
 
-    int *p_a = &a;
-    int *p_b = &b;
-    swap(p_a, p_b);
+    swap(&a, &b);
 
     puts("After swap:");
     printf("\t a=%d \n", a);
