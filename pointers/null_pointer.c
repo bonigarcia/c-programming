@@ -5,10 +5,10 @@ int main() {
 
     /*
      This equivalent to:
-     if (pointer == NULL)
      if (pointer == 0)
+     if (!pointer)
      */
-    if (!pointer) {
+    if (pointer == NULL) {
         printf("Pointer is NULL\n");
     }
 
