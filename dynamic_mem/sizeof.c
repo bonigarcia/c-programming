@@ -17,7 +17,7 @@ struct unit { /* Define a struct with an internal union */
     } identifier;
 };
 
-int main(int argc, char *argv[]) {
+int main() {
     int table[TABLE_SIZE];
     struct unit data[UNITS_NUMBER];
 

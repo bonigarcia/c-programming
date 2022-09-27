@@ -7,7 +7,7 @@ void my_strcpy(char *dst, char *src) {
     strcpy(dst, src);
 }
 
-int main(int argc, char *argv[]) {
+int main() {
     char str1[SIZE] = "Test";
     char str2[sizeof(str1)];
     my_strcpy(str2, str1);
