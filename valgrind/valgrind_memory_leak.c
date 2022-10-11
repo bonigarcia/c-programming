@@ -6,16 +6,15 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <string.h>
 
 void leak() {
     void *ptr = malloc(100);
 }
 
 int main() {
-    printf("#Let's leak 100 bytes");
+    puts("Let's leak 100 bytes");
     leak();
-    printf("#100 bytes leaked");
+    puts("100 bytes leaked");
 
     return 0;
 }
