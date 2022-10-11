@@ -1,28 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define SIZE_1 5
+#define SIZE_2 10
+
+void fill_array(int *array, int init, int end) {
+    for (int i = init; i < end; i++) {
+        array[i] = i;
+    }
+}
+
+void display_array(int *array, int init, int end) {
+    for (int i = init; i < end; i++) {
+        printf("array[%d]=%d\n", i, array[i]);
+    }
+    printf("\n");
+}
+
 int main() {
-    int *ptr, i, n1, n2;
-    printf("Enter size: ");
-    scanf("%d", &n1);
+    int *ptr = (int*) calloc(SIZE_1, sizeof(int));
 
-    ptr = (int*) malloc(n1 * sizeof(int));
+    fill_array(ptr, 0, SIZE_1);
+    display_array(ptr, 0, SIZE_1);
 
-    printf("Addresses of previously allocated memory:\n");
-    for (i = 0; i < n1; i++) {
-        printf("%p\n", ptr + i);
-    }
+    ptr = (int*) realloc(ptr, SIZE_2 * sizeof(int));
 
-    printf("\nEnter the new size: ");
-    scanf("%d", &n2);
-
-    // realloc stands for (memory) reallocation
-    ptr = realloc(ptr, n2 * sizeof(int));
-
-    printf("Addresses of newly allocated memory:\n");
-    for (i = 0; i < n2; i++) {
-        printf("%p\n", ptr + i);
-    }
+    fill_array(ptr, SIZE_1, SIZE_2);
+    display_array(ptr, SIZE_1, SIZE_2);
 
     free(ptr);
 

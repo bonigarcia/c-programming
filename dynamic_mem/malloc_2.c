@@ -1,24 +1,19 @@
+#include <stdio.h>
 #include <stdlib.h>
 
-#define TABLE_SIZE 10
-
-struct cell_info {
+struct cell {
     int a;
     int b;
-    int table[TABLE_SIZE];
 };
 
 int main() {
-    // General rule to call the function malloc:
-    // T *ptr = (T*) malloc(sizeof(T));
+    struct cell *ptr = (struct cell*) malloc(sizeof(struct cell));
 
-    struct cell_info *cell_ptr = (struct cell_info*) malloc(
-            sizeof(struct cell_info));
+    ptr->a = 10;
+    ptr->b = 20;
 
-    cell_ptr->a = 10;
-    cell_ptr->b = 20;
-    cell_ptr->table[5] = 0;
+    printf("The address %p contains %d and then %d\n",
+            ptr, ptr->a, ptr->b);
 
-    free(cell_ptr);
+    free(ptr);
 }
-
