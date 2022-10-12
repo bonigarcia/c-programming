@@ -1,19 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-struct cell {
-    int a;
-    int b;
-};
+#define SIZE 5
 
 int main() {
-    struct cell *ptr = (struct cell*) malloc(sizeof(struct cell));
+    int *ptr = (int*) malloc(SIZE * sizeof(int));
 
-    ptr->a = 10;
-    ptr->b = 20;
+    for (int i = 0; i < SIZE; i++) {
+        *(ptr + i) = i;  // alternatively: ptr[i] = i;
+    }
 
-    printf("The address %p contains %d and then %d\n",
-            ptr, ptr->a, ptr->b);
+    for (int i = 0; i < SIZE; i++) {
+        printf("The address %p contains %d\n", (ptr + i), *(ptr + i));
+    }
 
     free(ptr);
+
+    return 0;
 }
