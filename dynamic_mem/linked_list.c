@@ -45,7 +45,6 @@ void append(Node **head_ref, Node *new_node) {
     }
 
     last->next = new_node;
-    return;
 }
 
 /*
