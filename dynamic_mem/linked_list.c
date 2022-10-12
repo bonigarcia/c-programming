@@ -62,7 +62,7 @@ void insert_after(Node *prev_node, Node *new_node) {
 }
 
 /*
- * Print list content on the standard output.
+ * Display list content in the standard output
  */
 void print_list(Node *head) {
     while (head != NULL) {
@@ -73,7 +73,7 @@ void print_list(Node *head) {
 }
 
 /*
- * Delete list (free memory).
+ * Delete list (free memory)
  */
 void clear_list(Node **head_ref) {
     Node *current = *head_ref;
@@ -89,7 +89,7 @@ void clear_list(Node **head_ref) {
 }
 
 /*
- * Make a copy of a list.
+ * Make a copy of a list
  */
 Node* clone_list(Node *head) {
     Node *current = head;
@@ -114,7 +114,7 @@ Node* clone_list(Node *head) {
 }
 
 /*
- * Swap nodes.
+ * Swap nodes
  */
 void swap(Node *a, Node *b) {
     Node tmp;
@@ -124,28 +124,32 @@ void swap(Node *a, Node *b) {
 }
 
 /*
- * Delete node by value.
+ * Delete node by value
  */
 void delete_node(Node **head_ref, int key) {
     struct Node *tmp = *head_ref, *prev;
 
+    // The node to be deleted is the first position
     if (tmp != NULL && tmp->data == key) {
         *head_ref = tmp->next;
         free(tmp);
         return;
     }
 
+    // If not, we find the matching node (if any)
     while (tmp != NULL && tmp->data != key) {
         prev = tmp;
         tmp = tmp->next;
     }
 
+    // If not found, nothing is done
     if (tmp == NULL) {
         return;
     }
 
+    // If found, the previous node is connected to the next
+    // and then, the memory of the matching node is released
     prev->next = tmp->next;
-
     free(tmp);
 }
 
