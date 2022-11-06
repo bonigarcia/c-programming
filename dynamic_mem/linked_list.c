@@ -115,16 +115,6 @@ Node* clone_list(Node *head) {
 }
 
 /*
- * Swap nodes
- */
-void swap(Node *a, Node *b) {
-    Node tmp;
-    tmp.data = a->data;
-    a->data = b->data;
-    b->data = tmp.data;
-}
-
-/*
  * Delete node by value
  */
 void delete_node(Node **head_ref, int key) {
@@ -190,11 +180,6 @@ int main() {
     Node *node_8 = create_node(8);
     insert_after(head->next, node_8);
     printf("Insert 8 after second node. Linked list is:");
-    print_list(head);
-
-    // Swap nodes 8 and 1
-    swap(node_8, node_1);
-    printf("Swapping 8 and 1. Linked list is:");
     print_list(head);
 
     // Copy list
