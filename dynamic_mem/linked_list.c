@@ -126,7 +126,7 @@ void swap(Node *a, Node *b) {
  * Delete node by value
  */
 void delete_node(Node **head_ref, int key) {
-    struct Node *tmp = *head_ref, *prev;
+    Node *tmp = *head_ref, *prev;
 
     // The node to be deleted is the first position
     if (tmp != NULL && tmp->data == key) {
