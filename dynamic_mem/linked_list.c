@@ -35,11 +35,13 @@ void push(Node **head_ref, Node *new_node) {
 void append(Node **head_ref, Node *new_node) {
     Node *last = *head_ref;
 
+    // If list is empty, the node is inserted at the beginning
     if (*head_ref == NULL) {
         *head_ref = new_node;
         return;
     }
 
+    // If list is not empty, we look for the last node
     while (last->next != NULL) {
         last = last->next;
     }
