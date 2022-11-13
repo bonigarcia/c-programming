@@ -12,13 +12,13 @@ int main() {
 
     printf("The content of the binary file is:\n");
     char record[MAX_STR];
-    int offset_pos = ftell(fp);
-    printf("[offset at the beginning is: %d]\n", offset_pos);
+    int file_pos = ftell(fp);
+    printf("[file position at the beginning is: %d]\n", file_pos);
     while (fread(&record, sizeof(record), 1, fp) == 1) {
-        offset_pos = ftell(fp);
-        printf("%s [offset is now: %d]\n", record, offset_pos);
+        file_pos = ftell(fp);
+        printf("%s [file position is: %d]\n", record, file_pos);
     }
-    printf("[offset at the end is: %d]\n", offset_pos);
+    printf("[file position at the end is: %d]\n", file_pos);
 
     fclose(fp);
 
