@@ -6,7 +6,7 @@
 int main() {
     FILE *fp = fopen("file2.bin", "rb");
     if (!fp) {
-        perror("An error occurred opening the file\n");
+        perror("An error occurred opening the file");
         return 1;
     }
 

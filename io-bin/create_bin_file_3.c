@@ -19,7 +19,7 @@ int main() {
 
     FILE *fp = fopen("file3.bin", "wb");
     if (!fp) {
-        perror("An error occurred opening the file\n");
+        perror("An error occurred opening the file");
         return 1;
     }
     fwrite(content, sizeof(struct data), SIZE, fp);

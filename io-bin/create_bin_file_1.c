@@ -3,7 +3,7 @@
 int main() {
     FILE *fp = fopen("file1.bin", "wb");
     if (!fp) {
-        perror("An error occurred opening the file\n");
+        perror("An error occurred opening the file");
         return 1;
     }
 
