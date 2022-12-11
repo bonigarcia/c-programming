@@ -33,8 +33,6 @@ void push(Node **head_ref, Node *new_node) {
  * Insert Node at the end
  */
 void append(Node **head_ref, Node *new_node) {
-    Node *last = *head_ref;
-
     // If list is empty, the node is inserted at the beginning
     if (*head_ref == NULL) {
         *head_ref = new_node;
@@ -42,10 +40,10 @@ void append(Node **head_ref, Node *new_node) {
     }
 
     // If list is not empty, we look for the last node
+    Node *last = *head_ref;
     while (last->next != NULL) {
         last = last->next;
     }
-
     last->next = new_node;
 }
 
@@ -146,6 +144,18 @@ void delete_node(Node **head_ref, int key) {
 
 int main() {
     Node *head = NULL;
+
+    // Append 0
+    Node *node_0 = create_node(0);
+    append(&head, node_0);
+    printf("Insert 0 at the end. Linked list is:");
+    print_list(head);
+
+    // Append 9
+    Node *node_9 = create_node(9);
+    append(&head, node_9);
+    printf("Insert 9 at the end. Linked list is:");
+    print_list(head);
 
     // Push 6
     Node *node_6 = create_node(6);
