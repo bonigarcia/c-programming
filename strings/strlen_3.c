@@ -1,8 +1,10 @@
 #include <stdio.h>
 #include <string.h>
 
+#define MAX_STR 80
+
 int main() {
-    char str[] = "hello";
+    char str[MAX_STR] = "hello";
     size_t str_length = strlen(str);
     size_t str_size = sizeof(str) / sizeof(char);
 
