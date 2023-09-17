@@ -1,10 +1,10 @@
 #include <stdio.h>
-#define SIZE 4
 
 int main() {
-    int array[SIZE] = { 25, 50, 75, 100 };
+    int array[] = { 25, 50, 75, 100 };
+    size_t size = sizeof(array) / sizeof(array[0]);
 
-    for (int i = 0; i < SIZE; i++) {
+    for (int i = 0; i < size; i++) {
         printf("The value of the position %d in array is %d\n", i, array[i]);
     }
 

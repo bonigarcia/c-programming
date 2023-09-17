@@ -2,11 +2,17 @@
 #define SIZE 4
 
 int main() {
-    int array[SIZE] = { 25, 50, 75, 100 };
+    int array[SIZE];
 
-    for (int i = 0; i < SIZE; i++) {
-        printf("The value of the position %d in array is %d\n", i, array[i]);
-    }
+    array[0] = 25;
+    array[1] = 50;
+    array[2] = 75;
+    array[3] = 100;
+
+    printf("The value of the position 0 in array is %d\n", array[0]);
+    printf("The value of the position 1 in array is %d\n", array[1]);
+    printf("The value of the position 2 in array is %d\n", array[2]);
+    printf("The value of the position 3 in array is %d\n", array[3]);
 
     return 0;
 }
