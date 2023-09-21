@@ -1,13 +1,16 @@
 #include <stdio.h>
 
 int main() {
-    char str[40];
-    int i;
+    int i, res;
 
-    printf("Enter a string and an integer: ");
-    scanf("%s %d", str, &i);
+    printf("Enter an integer: ");
+    res = scanf("%d", &i);
 
-    printf("You entered: %s %d\n", str, i);
+    if (res == EOF) {
+        printf("You sent EOF\n");
+    } else {
+        printf("You entered: %d\n", i);
+    }
 
     return 0;
 }

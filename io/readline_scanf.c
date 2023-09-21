@@ -1,8 +1,8 @@
 #include <stdio.h>
+#define MAX 80
 
 int main() {
-    int bufsize = 80;
-    char buffer[bufsize];
+    char buffer[MAX];
 
     printf("Enter line: ");
     scanf("%[^\n]", buffer);

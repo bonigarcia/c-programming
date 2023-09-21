@@ -1,13 +1,13 @@
 #include <stdio.h>
+#define MAX 80
 
 int main() {
-    int bufsize = 80;
-    char buffer[bufsize];
+    char str[MAX];
+    printf("Enter a string: ");
+    fgets(str, MAX, stdin);
 
-    printf("Enter line: ");
-    fgets(buffer, bufsize, stdin);
-
-    printf("You entered: %s\n", buffer);
+    printf("You entered: ");
+    puts(str);
 
     return 0;
 }

@@ -1,15 +1,16 @@
 #include <stdio.h>
+#define MAX 80
 
 int main() {
-    size_t bufsize = 80;
-    char buffer[bufsize];
-    char *b = buffer;
-    int characters;
+    char str[MAX];
+    size_t bufsize = MAX;
+    char *buffer = str;
 
-    printf("Enter a line: ");
-    characters = getline(&b, &bufsize, stdin);
-    printf("%d characters were read\n", characters);
-    printf("You entered: %s\n", buffer);
+    printf("Enter a string: ");
+    getline(&buffer, &bufsize, stdin);
+
+    printf("You entered: ");
+    puts(str);
 
     return 0;
 }

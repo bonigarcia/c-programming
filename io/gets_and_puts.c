@@ -1,7 +1,8 @@
 #include <stdio.h>
+#define MAX 80
 
 int main() {
-    char str[80];
+    char str[MAX];
     printf("Enter a string: ");
     gets(str);
 

@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <ctype.h>
+#define MAX 80
 
 int main() {
     char ch;
-    int bufsize = 80;
-    char buffer[bufsize];
+    char buffer[MAX];
 
     for (;;) { // Infinite loop
         printf("Insert character (q to exit): ");
-        fgets(buffer, bufsize, stdin);
+        fgets(buffer, MAX, stdin);
         ch = buffer[0];
 
         if (tolower(ch) == 'q') {
