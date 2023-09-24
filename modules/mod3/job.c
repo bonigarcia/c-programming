@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "job.h"
 
+extern Job company[];
+
 void display_job(Job job) {
     printf("%s is a %s\n", job.person.name, job.role);
 }

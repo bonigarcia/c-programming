@@ -1,7 +1,7 @@
 #ifndef JOB_H
 #define JOB_H
 
-#include "people.h"
+#include "person.h"
 
 typedef struct Job {
     Person person;

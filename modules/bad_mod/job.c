@@ -3,6 +3,8 @@
 
 void display_job(Job job) {
     printf("%s is a %s\n", job.person.name, job.role);
+}
 
-    debug("This is a DEBUG message in the function display_job\n");
+void display_job_by_index(int i) {
+    display_job(company[i]);
 }

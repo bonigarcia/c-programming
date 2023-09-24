@@ -9,11 +9,11 @@ int main() {
     Job developer = { alice, "developer" };
     Job tester = { bob, "tester" };
 
-    display_job(developer);
-    display_job(tester);
+    company[0] = developer;
+    company[1] = tester;
 
-    printf("The sum of the ages of %s and %s is %d\n", alice.name, bob.name,
-            sum_ages(alice, bob));
+    display_job_by_index(0);
+    display_job_by_index(1);
 
     return 0;
 }

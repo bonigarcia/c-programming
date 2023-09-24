@@ -1,8 +1,6 @@
 #include <stdio.h>
-#include "people.h"
+#include "person.h"
 #include "job.h"
-
-Job company[MAX_JOBS];
 
 int main() {
     Person alice = { "Alice", 25 };
@@ -11,11 +9,11 @@ int main() {
     Job developer = { alice, "developer" };
     Job tester = { bob, "tester" };
 
-    company[0] = developer;
-    company[1] = tester;
+    display_job(developer);
+    display_job(tester);
 
-    display_job_by_index(0);
-    display_job_by_index(1);
+    printf("The sum of the ages of %s and %s is %d\n", alice.name, bob.name,
+            sum_ages(alice, bob));
 
     return 0;
 }

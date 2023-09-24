@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "people.h"
+#include "person.h"
 #include "job.h"
 
 int main() {

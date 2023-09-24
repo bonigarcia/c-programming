@@ -1,6 +1,8 @@
 #include <stdio.h>
-#include "people.h"
+#include "person.h"
 #include "job.h"
+
+Job company[MAX_JOBS];
 
 int main() {
     Person alice = { "Alice", 25 };
