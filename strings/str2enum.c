@@ -5,12 +5,12 @@ typedef enum key {
     ON, OFF
 } key;
 
-struct key_converter {
+typedef struct key_converter {
     enum key key;
     char *str;
-};
+} key_converter;
 
-struct key_converter key_conv_arr[] = { { ON, "ON" }, { OFF, "OFF" } };
+key_converter key_conv_arr[] = { { ON, "ON" }, { OFF, "OFF" } };
 
 key str2key(char *str) {
     for (int i = 0; i < sizeof(key_conv_arr) / sizeof(key_conv_arr[0]); i++) {
