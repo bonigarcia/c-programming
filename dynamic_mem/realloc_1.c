@@ -19,14 +19,16 @@ void display_array(int *array, int init, int end) {
 
 int main() {
     int *ptr = (int*) calloc(SIZE_1, sizeof(int));
+    printf("The address of ptr is %p\n", ptr);
 
     fill_array(ptr, 0, SIZE_1);
     display_array(ptr, 0, SIZE_1);
 
     ptr = (int*) realloc(ptr, SIZE_2 * sizeof(int));
+    printf("The address of ptr is %p\n", ptr);
 
     fill_array(ptr, SIZE_1, SIZE_2);
-    display_array(ptr, SIZE_1, SIZE_2);
+    display_array(ptr, 0, SIZE_2);
 
     free(ptr);
 
