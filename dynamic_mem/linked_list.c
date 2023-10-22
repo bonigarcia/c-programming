@@ -145,18 +145,6 @@ void delete_node(Node **head_ref, int key) {
 int main() {
     Node *head = NULL;
 
-    // Append 0
-    Node *node_0 = create_node(0);
-    append(&head, node_0);
-    printf("Insert 0 at the end. Linked list is:");
-    print_list(head);
-
-    // Append 9
-    Node *node_9 = create_node(9);
-    append(&head, node_9);
-    printf("Insert 9 at the end. Linked list is:");
-    print_list(head);
-
     // Push 6
     Node *node_6 = create_node(6);
     push(&head, node_6);
