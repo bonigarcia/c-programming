@@ -7,7 +7,6 @@ typedef struct thread_data {
     int a;
     int b;
     int result;
-
 } thread_data;
 
 void* thread_run(void *data) {
@@ -39,7 +38,8 @@ int main() {
     }
 
     pthread_join(thread_id, NULL);
-    printf("[MAIN: %ld]: Thread finished, returning %d\n", main_id, data.result);
+    printf("[MAIN: %ld]: Thread finished, returning %d\n", main_id,
+            data.result);
 
     return 0;
 }
