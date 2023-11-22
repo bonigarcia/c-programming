@@ -2,25 +2,26 @@
 #include <ctype.h>
 #include <string.h>
 
-#define MAX 80
+#define MAX_STR 80
 
 int main() {
     char ch;
-    char buffer[MAX];
+    char input[MAX_STR];
 
     for (;;) { // Infinite loop
         printf("Insert character (q to exit): ");
 
-        fgets(buffer, MAX, stdin); // Read a complete line from the user
-        buffer[strlen(buffer) - 1] = 0; // Remove trailing carriage return
-        ch = buffer[0]; // Get only the first character of the input
+        fgets(input, MAX_STR, stdin); // Read a complete line from the user
+        input[strlen(input) - 1] = '\0'; // Remove trailing carriage return
 
-        if (tolower(ch) == 'q' && strlen(buffer) == 1) {
+        printf("\tYou entered: %s (%ld characters)\n", input, strlen(input));
+
+        ch = input[0]; // Get only the first character of the input
+        if (tolower(ch) == 'q' && strlen(input) == 1) {
             printf("Goodbye!\n");
             break;
         }
 
-        printf("\tYou entered: %s\n", buffer);
     }
 
     return 0;
