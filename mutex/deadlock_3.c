@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <pthread.h>
-#include <unistd.h>
 
 pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
 pthread_mutex_t mutex2 = PTHREAD_MUTEX_INITIALIZER;
