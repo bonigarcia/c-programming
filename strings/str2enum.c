@@ -10,7 +10,7 @@ typedef struct key_converter {
     char *str;
 } key_converter;
 
-key_converter key_conv_arr[] = { { ON, "ON" }, { OFF, "OFF" } };
+key_converter key_conv_arr[] = { { ON, "on" }, { OFF, "off" } };
 
 key str2key(char *str) {
     for (int i = 0; i < sizeof(key_conv_arr) / sizeof(key_conv_arr[0]); i++) {
@@ -26,14 +26,14 @@ char* key2str(key key) {
 }
 
 int main() {
-    // 1. Convert "ON" to enumerated type
-    char *key_str_on = "ON";
+    // 1. Convert "on" to enumerated type
+    char *key_str_on = "on";
     key key_enum_on = str2key(key_str_on);
     printf("1. Original string: %s -- Enumeration value: %d\n", key_str_on,
             key_enum_on);
 
-    // 2. Convert "OFF" to enumerated type
-    char *key_str_off = "OFF";
+    // 2. Convert "off" to enumerated type
+    char *key_str_off = "off";
     key key_enum_off = str2key(key_str_off);
     printf("2. Original string: %s -- Enumeration value: %d\n", key_str_off,
             key_enum_off);
