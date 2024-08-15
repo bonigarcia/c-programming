@@ -143,7 +143,7 @@ void delete_node(Node **head_ref, int key) {
 }
 
 /*
- * Swap two linked lists
+ * Swap two nodes
  */
 void swap(Node *a, Node *b) {
     Node tmp = *a;
@@ -156,7 +156,7 @@ void swap(Node *a, Node *b) {
 }
 
 /*
- * Sort by value
+ * Sort linked list by value
  */
 void sort(Node *head) {
     if (head == NULL) {
