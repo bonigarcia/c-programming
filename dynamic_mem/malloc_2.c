@@ -6,15 +6,12 @@
 int main() {
     int *ptr = (int*) malloc(SIZE * sizeof(int));
 
-    for (int i = 0; i < SIZE; i++) {
-        *(ptr + i) = i;  // alternatively: ptr[i] = i;
+    if (ptr == NULL) {
+        fputs(stderr, "Dynamic memory cannot be allocated.");
+        exit(1);
     }
 
-    for (int i = 0; i < SIZE; i++) {
-        printf("The address %p contains %d\n", (ptr + i), *(ptr + i));
-    }
-
-    free(ptr);
+    // FIXME: Memory allocated is not released!
 
     return 0;
 }

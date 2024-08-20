@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 5
-
 int main() {
-    int *ptr = (int*) malloc(SIZE * sizeof(int));
+    int *ptr = (int*) malloc(sizeof(int));
 
     if (ptr == NULL) {
-        fprintf(stderr, "Dynamic memory cannot be allocated.\n");
+        fputs(stderr, "Dynamic memory cannot be allocated.");
         exit(1);
     }
 
