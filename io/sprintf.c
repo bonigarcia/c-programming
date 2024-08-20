@@ -8,7 +8,7 @@ int main() {
 
     char str[MAX];
     sprintf(str, "You are %d years old", n);
-    printf("%s\n", str);
+    puts(str);
 
     return 0;
 }

@@ -10,7 +10,7 @@ int main() {
         while (getchar() != '\n'); // Clear input buffer
 
         if (tolower(ch) == 'q') {
-            printf("Goodbye!\n");
+            puts("Goodbye!");
             break;
         }
 

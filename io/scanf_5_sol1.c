@@ -18,7 +18,7 @@ int main() {
 
         ch = input[0]; // Get only the first character of the input
         if (tolower(ch) == 'q' && strlen(input) == 1) {
-            printf("Goodbye!\n");
+            puts("Goodbye!");
             break;
         }
 

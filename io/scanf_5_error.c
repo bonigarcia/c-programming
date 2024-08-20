@@ -9,7 +9,7 @@ int main() {
         scanf("%c", &ch); // equivalent to: ch = getchar();
 
         if (tolower(ch) == 'q') {
-            printf("Goodbye!\n");
+            puts("Goodbye!");
             break;
         }
 

@@ -14,10 +14,10 @@ int main() {
         if (i > 0 && i < 8) {
             printf("You entered %d\n", i);
         } else if (i == 8) {
-            printf("Goodbye!\n");
+            puts("Goodbye!");
             break;
         } else {
-            printf("Wrong option\n");
+            puts("Wrong option");
         }
     }
 
