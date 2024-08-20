@@ -5,5 +5,14 @@ int main() {
 
     static int min = 0; // This is a static variable, stored in the data segment
 
+    char *msg = "Hello world"; // This is a string literal, stored in the data segment
+
+
+    printf("%s\n", msg);
+
+    msg[1] = 'A';
+
+    printf("%s\n", msg);
+
     return 0;
 }

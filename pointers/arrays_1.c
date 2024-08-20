@@ -10,6 +10,8 @@ void double_array(int array[], int size) {
 int main() {
     int array[SIZE] = { 25, 50, 75, 100 };
 
+    printf("%d\n", array[0]);
+
     double_array(array, SIZE);
 
     printf("%d\n", array[0]);
