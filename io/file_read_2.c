@@ -5,7 +5,7 @@ int main() {
     FILE *fp = fp = fopen("file.txt", "r");
 
     if (fp == NULL) {
-        fputs(stderr, "Error opening file");
+        fputs("Error opening file", stderr);
         exit(1);
     }
 

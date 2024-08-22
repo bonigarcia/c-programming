@@ -7,7 +7,7 @@ int main() {
     int *ptr = (int*) malloc(SIZE * sizeof(int));
 
     if (ptr == NULL) {
-        fputs(stderr, "Dynamic memory cannot be allocated.");
+        fputs("Dynamic memory cannot be allocated.", stderr);
         exit(1);
     }
 
