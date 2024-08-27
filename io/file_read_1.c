@@ -6,7 +6,7 @@ int main() {
     FILE *fp = fopen("file.txt", "r");
     if (fp == NULL) {
         fputs("Error opening file", stderr);
-        exit(1);
+        exit(EXIT_FAILURE);
     }
 
     char buffer[MAX];
@@ -16,5 +16,5 @@ int main() {
 
     fclose(fp);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
