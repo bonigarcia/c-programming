@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdio.h>
 
+// ISO C requires a named argument before '...'
 int sum(int n, ...) {
     int sum = 0;
     va_list ptr;
