@@ -7,12 +7,5 @@ int main() {
 
     char *msg = "Hello world"; // This is a string literal, stored in the read-only data segment
 
-
-    printf("%s\n", msg);
-
-    msg[1] = 'A';
-
-    printf("%s\n", msg);
-
     return 0;
 }
