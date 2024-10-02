@@ -4,12 +4,12 @@
 int main() {
     FILE *fp = fopen("file.txt", "w");
     if (fp == NULL) {
-        fputs("Error opening file", stderr);
+        fputs("Error opening file\n", stderr);
         exit(1);
     }
 
     // Write a line to the file
-    fputs("I am writing into the file", fp);
+    fputs("I am writing into the file\n", fp);
 
     int i;
     printf("Enter integer: ");

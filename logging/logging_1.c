@@ -4,7 +4,7 @@ int divide(int a, int b) {
     printf("Entering divide function with a = %d, b = %d\n", a, b);
 
     if (b == 0) {
-        fputs("Error: Division by zero encountered.", stderr);
+        fputs("Error: Division by zero encountered\n", stderr);
         return 0;
     }
 
