@@ -7,47 +7,49 @@
 #define BUFFER_SIZE 100
 
 int main() {
-    int pipefds[2];
-    pid_t pid;
-    char write_msg[] = "Hello from parent process!";
-    char read_msg[BUFFER_SIZE];
-
     // Create the pipe
-    if (pipe(pipefds) == -1) {
+    int fd[2];
+    if (pipe(fd) < 0) {
         perror("pipe");
         exit(EXIT_FAILURE);
     }
 
-    // Create a child process
-    pid = fork();
-    if (pid == -1) {
+    // Fork process
+    pid_t pid = fork();
+    if (pid < 0) {
         perror("fork");
         exit(EXIT_FAILURE);
     }
 
     if (pid == 0) { // Child process
         // Close the write end of the pipe
-        close(pipefds[1]);
+        close(fd[1]);
 
         // Read the message from the pipe
-        read(pipefds[0], read_msg, BUFFER_SIZE);
+        // blocking operation: wait until there is data to be read or until the pipe is closed
+        char read_msg[BUFFER_SIZE];
+        read(fd[0], read_msg, BUFFER_SIZE);
         printf("Child process received message: %s\n", read_msg);
 
         // Close the read end of the pipe
-        close(pipefds[0]);
+        close(fd[0]);
+
+        _exit(EXIT_SUCCESS);
+
     } else { // Parent process
         // Close the read end of the pipe
-        close(pipefds[0]);
+        close(fd[0]);
 
         // Write the message to the pipe
-        write(pipefds[1], write_msg, strlen(write_msg) + 1);
+        char *write_msg = "Hello from the parent!";
+        write(fd[1], write_msg, strlen(write_msg) + 1);
 
         // Close the write end of the pipe
-        close(pipefds[1]);
+        close(fd[1]);
 
         // Wait for child process to finish
         wait(NULL);
     }
 
-    return 0;
+    return EXIT_SUCCESS;
 }
