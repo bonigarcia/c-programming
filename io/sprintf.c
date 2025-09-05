@@ -1,5 +1,5 @@
 #include <stdio.h>
-#define MAX 80
+#define MAX 22
 
 int main() {
     int n;
