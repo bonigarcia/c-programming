@@ -2,19 +2,19 @@
 #include <stdlib.h>
 
 int main() {
-    FILE *fp = fp = fopen("file.txt", "r");
+    FILE *fd = fd = fopen("file.txt", "r");
 
-    if (fp == NULL) {
-        fputs("Error opening file\n", stderr);
+    if (fd == NULL) {
+        fduts("Error opening file\n", stderr);
         exit(1);
     }
 
     int ch;
-    while ((ch = fgetc(fp)) != EOF) {
+    while ((ch = fgetc(fd)) != EOF) {
         putchar(ch);
     }
 
-    fclose(fp);
+    fclose(fd);
 
     return 0;
 }

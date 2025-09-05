@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    FILE *fp = fopen("file1.bin", "wb");
-    if (!fp) {
+    FILE *fd = fopen("file1.bin", "wb");
+    if (!fd) {
         perror("An error occurred opening the file");
         return 1;
     }
@@ -10,10 +10,10 @@ int main() {
     int i = 100;
     float f = 20.5;
 
-    fwrite(&i, sizeof(int), 1, fp);
-    fwrite(&f, sizeof(float), 1, fp);
+    fwrite(&i, sizeof(int), 1, fd);
+    fwrite(&f, sizeof(float), 1, fd);
 
-    fclose(fp);
+    fclose(fd);
 
     return 0;
 }

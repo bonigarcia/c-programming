@@ -4,20 +4,20 @@
 #define MAX_STR 255
 
 int main() {
-    FILE *fp = fopen("file2.bin", "rb");
-    if (!fp) {
+    FILE *fd = fopen("file2.bin", "rb");
+    if (!fd) {
         perror("An error occurred opening the file");
         return 1;
     }
 
     printf("The content of the binary file (showing only odd values) is:\n");
     char record[MAX_STR];
-    while (fread(&record, sizeof(record), 1, fp) == 1) {
+    while (fread(&record, sizeof(record), 1, fd) == 1) {
         puts(record);
-        fseek(fp, sizeof(record), SEEK_CUR);
+        fseek(fd, sizeof(record), SEEK_CUR);
     }
 
-    fclose(fp);
+    fclose(fd);
 
     return 0;
 }

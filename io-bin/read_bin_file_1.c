@@ -2,22 +2,22 @@
 #include <stdio.h>
 
 int main() {
-    FILE *fp = fopen("file1.bin", "rb");
-    if (!fp) {
+    FILE *fd = fopen("file1.bin", "rb");
+    if (!fd) {
         perror("An error occurred opening the file");
         return 1;
     }
 
     int i;
-    fread(&i, sizeof(i), 1, fp);
+    fread(&i, sizeof(i), 1, fd);
     float f;
-    fread(&f, sizeof(f), 1, fp);
+    fread(&f, sizeof(f), 1, fd);
 
     printf("The content of the binary file is:\n");
     printf("%d\n", i);
     printf("%f\n", f);
 
-    fclose(fp);
+    fclose(fd);
 
     return 0;
 }

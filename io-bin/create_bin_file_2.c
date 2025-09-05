@@ -11,13 +11,13 @@ int main() {
         sprintf(content[i], "This is line %d", i + 1);
     }
 
-    FILE *fp = fopen("file2.bin", "wb");
-    if (!fp) {
+    FILE *fd = fopen("file2.bin", "wb");
+    if (!fd) {
         perror("An error occurred opening the file");
         return 1;
     }
-    fwrite(content, MAX_STR, SIZE, fp);
-    fclose(fp);
+    fwrite(content, MAX_STR, SIZE, fd);
+    fclose(fd);
 
     return 0;
 }

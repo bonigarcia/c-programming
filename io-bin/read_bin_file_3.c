@@ -9,19 +9,19 @@ struct data {
 };
 
 int main() {
-    FILE *fp = fopen("file3.bin", "rb");
-    if (!fp) {
+    FILE *fd = fopen("file3.bin", "rb");
+    if (!fd) {
         perror("An error occurred opening the file");
         return 1;
     }
 
     printf("The content of the binary file is:\n");
     struct data record;
-    while (fread(&record, sizeof(struct data), 1, fp) == 1) {
+    while (fread(&record, sizeof(struct data), 1, fd) == 1) {
         printf("String: %s -- Integer: %d\n", record.str, record.integer);
     }
 
-    fclose(fp);
+    fclose(fd);
 
     return 0;
 }

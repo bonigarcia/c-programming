@@ -3,18 +3,18 @@
 #define MAX 255
 
 int main() {
-    FILE *fp = fopen("file.txt", "r");
-    if (fp == NULL) {
-        fputs("Error opening file\n", stderr);
+    FILE *fd = fopen("file.txt", "r");
+    if (fd == NULL) {
+        fduts("Error opening file\n", stderr);
         exit(EXIT_FAILURE);
     }
 
     char buffer[MAX];
-    while (fgets(buffer, MAX, fp) != NULL) {
+    while (fgets(buffer, MAX, fd) != NULL) {
         printf("%s", buffer);
     }
 
-    fclose(fp);
+    fclose(fd);
 
     return EXIT_SUCCESS;
 }

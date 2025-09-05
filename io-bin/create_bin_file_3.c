@@ -17,13 +17,13 @@ int main() {
         content[i].integer = i + i;
     }
 
-    FILE *fp = fopen("file3.bin", "wb");
-    if (!fp) {
+    FILE *fd = fopen("file3.bin", "wb");
+    if (!fd) {
         perror("An error occurred opening the file");
         return 1;
     }
-    fwrite(content, sizeof(struct data), SIZE, fp);
-    fclose(fp);
+    fwrite(content, sizeof(struct data), SIZE, fd);
+    fclose(fd);
 
     free(content);
 

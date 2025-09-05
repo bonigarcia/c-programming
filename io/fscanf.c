@@ -2,20 +2,20 @@
 #include <stdlib.h>
 
 int main() {
-    FILE *fp = fopen("data.txt", "r");
-    if (fp == NULL) {
-        fputs("Error opening file\n", stderr);
+    FILE *fd = fopen("data.txt", "r");
+    if (fd == NULL) {
+        fduts("Error opening file\n", stderr);
         exit(1);
     }
 
     char name[80];
     int age;
 
-    while (fscanf(fp, "%s is %d years old\n", name, &age) != EOF) {
+    while (fscanf(fd, "%s is %d years old\n", name, &age) != EOF) {
         printf("Name: %s -- Age: %d\n", name, age);
     }
 
-    fclose(fp);
+    fclose(fd);
 
     return 0;
 }
