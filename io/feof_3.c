@@ -11,11 +11,9 @@ int main() {
 
     char buffer[MAX];
     while (!feof(fd)) {
-        fgets(buffer, sizeof(buffer), fd);
-        if (feof(fd)) {
-            break;
+        if (fgets(buffer, sizeof(buffer), fd) != NULL) {
+            printf("%s", buffer);
         }
-        printf("%s", buffer);
     }
 
     fclose(fd);
